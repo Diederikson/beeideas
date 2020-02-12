@@ -1,0 +1,12 @@
+.content {
+    max-width: 500px;
+    margin: auto;
+    font-size: 3cm;
+    color: white;
+    background:red;
+    padding: 10px;
+  }
+
+  /* 
+  - Het resultaat van deze CSS is dat de tekst van elementen met class content gecentreerd op de pagina 3cm groot getoond wordt.
+  */
