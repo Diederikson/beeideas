@@ -8,6 +8,14 @@ var colorChange = /** @class */ (function () {
     };
     return colorChange;
 }());
+var Colors;
+(function (Colors) {
+    Colors[Colors["Green"] = 0] = "Green";
+    Colors[Colors["Red"] = 1] = "Red";
+    Colors[Colors["Blue"] = 2] = "Blue";
+    Colors[Colors["Orange"] = 3] = "Orange";
+})(Colors || (Colors = {}));
+console.log(Colors[3]);
 var elementSets = [];
 var squareSizeNum = 100;
 var squareSize = squareSizeNum + "px";
@@ -25,6 +33,7 @@ elementSets.map(function (elem, index) {
     var colorChangeClass = new colorChange(elem.div);
     elem.div.style.width = squareSize;
     elem.div.style.height = squareSize;
+    colorChangeClass.changeColor(Colors[Math.floor(Math.random() * 4)]);
     elem.button.textContent = "Change Color";
     elem.button.onclick = function (event) {
         colorChangeClass.changeColor(Colors[index]);
@@ -32,10 +41,3 @@ elementSets.map(function (elem, index) {
     document.body.appendChild(elem.button);
     document.body.appendChild(elem.div);
 });
-var Colors;
-(function (Colors) {
-    Colors[Colors["Green"] = 0] = "Green";
-    Colors[Colors["Red"] = 1] = "Red";
-    Colors[Colors["Blue"] = 2] = "Blue";
-    Colors[Colors["Orange"] = 3] = "Orange";
-})(Colors || (Colors = {}));
