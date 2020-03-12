@@ -11,6 +11,7 @@ Extend the class with a dieRoller class to create a method for rolling the die.
 Create a function to instantiate dice using the dieRoller class, binding elements using the constructor() function.
 
 Create a button to roll all the dice at once.
-
+ kjb
 Nou sante'he?
 */ 
+//# sourceMappingURL=rolldice.js.map

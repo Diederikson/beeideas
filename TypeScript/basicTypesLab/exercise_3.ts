@@ -19,6 +19,7 @@ class colorChange {
             return true; //shortcut the parent class if the function is invoked on the subclass
         }
         (this.div as HTMLElement).style.backgroundColor = color;
+        (this.div as HTMLElement).innerHTML="<span style='text-align: center'>YO!</span>";
         return true;
     }
 }

@@ -15,7 +15,6 @@ var Colors;
     Colors[Colors["Blue"] = 2] = "Blue";
     Colors[Colors["Orange"] = 3] = "Orange";
 })(Colors || (Colors = {}));
-console.log(Colors[3]);
 var elementSets = [];
 var squareSizeNum = 100;
 var squareSize = squareSizeNum + "px";
@@ -41,3 +40,4 @@ elementSets.map(function (elem, index) {
     document.body.appendChild(elem.button);
     document.body.appendChild(elem.div);
 });
+//# sourceMappingURL=exercise_2.js.map

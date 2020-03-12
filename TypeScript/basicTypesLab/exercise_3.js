@@ -27,6 +27,7 @@ var colorChange = /** @class */ (function () {
             return true; //shortcut the parent class if the function is invoked on the subclass
         }
         this.div.style.backgroundColor = color;
+        this.div.innerHTML = "<span style='text-align: center'>YO!</span>";
         return true;
     };
     return colorChange;
@@ -72,3 +73,4 @@ elementSets.map(function (elem, index) {
     document.body.appendChild(elem.button);
     document.body.appendChild(elem.div);
 });
+//# sourceMappingURL=exercise_3.js.map

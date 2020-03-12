@@ -15,3 +15,4 @@ div.style.height = squareSize;
 button.onclick = function (event) {
     colorChange(div, color);
 };
+//# sourceMappingURL=basicTypesLab.js.map
