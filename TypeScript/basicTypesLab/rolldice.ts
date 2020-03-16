@@ -1,5 +1,4 @@
 /*
-
 (aanwijzingen uit de opgave)
 - use Array, number, string, Boolean.
 - use enum to declare the dice numbers
@@ -17,7 +16,7 @@ Aanpak voor nu: kopieren van de code van exercise 3, en dan  aanpassen waar nodi
 [X] Annoteren
 [_] Opschonen
 [_] Herbouwen 
-
+*/
 
 interface ElementSet {
     'span': Element,
@@ -97,7 +96,8 @@ for (let index: number = 0; index < 4; index++) {
     for (let index: number = 0; index < 4; index++) {
     elementSets.push({
         'div': document.createElement('div'),
-        'button': document.createElement('button')
+        'button': document.createElement('button'),
+        'span': document.createElement('span')         
     })
 }
 
@@ -120,9 +120,12 @@ elementSets.map( (elem, index) => {
         colorChangeClass.changeColor(Colors[getRandomIntInclusive(1, 6)]);
     }
     // een poging om de spam sub-tree samen te stellen. Misschien niet in de map functie
-    document.body.appendChild(elem.span);
-    document.getElementById("span").appendChild(elem.div);
-    document.getElementById("span").appendChild(elem.button);
+    document.body.appendChild(elem.button);
+    document.body.appendChild(elem.div);
+    //document.body.appendChild(elem.span);
+    //document.getElementById("span").appendChild(elem.div);
+    //document.getElementById("span").appendChild(elem.button);
     
-})
-*/
+})}
+
+console.log("yooooo");
