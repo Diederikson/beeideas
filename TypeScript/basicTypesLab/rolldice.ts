@@ -14,18 +14,18 @@ Create a button to roll all the dice at once.
 Aanpak voor nu: kopieren van de code van exercise 3, en dan  aanpassen waar nodig.
 20200312|2219|DJO
 [X] Annoteren
-[_] Opschonen
-[_] Herbouwen 
+[X] Opschonen
+[X] Herbouwen 
 */
 
+//Template/Structuur voor Array van elementen
 interface ElementSet {
     'span': Element,
     'div': Element,
-    'button': Element
-    
+    'button': Element    
 }
 
-//cijfers toegevoegd voor de dobbelsteenopdracht
+//Cijfers toegevoegd voor de dobbelsteenopdracht
 enum Colors {
     Green=1,
     Red=2,
@@ -44,68 +44,58 @@ class colorChange {
         if (typeof(color) === "number") {
             return true; //shortcut the parent class if the function is invoked on the subclass
         }
-        //geintje om de colors van de div uit de vorige opdracht te combineren met 
+        //uitbreiding om de colors van de div uit de vorige opdracht te combineren met 
         //de getallen van de dobbelsteen
-        (this.div as HTMLElement).style.backgroundColor = color;
-        (this.div as HTMLElement).innerHTML=Colors[color];
+        (this.div as HTMLElement).style.backgroundColor = color; //kleur
+        (this.div as HTMLElement).innerHTML=Colors[color]; // Getal dat hoort bij de kleur
         return true;
     }
 }
 
+//De extensie laat ik even zitten. Kijk bij Tutorial Lab03 DEV273x Introduction to TypeScript 2
+//To Create An Overloaded Method als je dit nog wilt oefenen.
+// Ze halen me teveel overhoop 
 class numericColor extends colorChange {
     static Colors = Colors;
     constructor(div: Element) {
         super(div);
-        (this.div as HTMLElement).style.width = squareSize;
-        (this.div as HTMLElement).style.height = squareSize;
     }
 }
 
+//Random generator voor de kleuren
 let getRandomIntInclusive: Function = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
 let elementSets : Array<ElementSet> = [];
 let squareSizeNum: number = 100;
 let squareSize: string = `${ squareSizeNum }px`;
-let Elements = {
-    'div': document.createElement('div'),
-    'button': document.createElement('button')
-}
+//let Elements = {
+let bigButton=document.createElement('button');
 
-//Poging om de div en de button onder elkaar in een span te plaatsen 
-//om vervolgens de span met float horizontaal uit te lijnen.
-//probleem daarbij: in de map functie verderop heb je een ongeordende verzameling 
-//elementen door elkaar die stuk voor stuk (de divs althans) dezelfde prperties krijgen
-//als je genest zitten in span kan je niet meer een willekeurige span pakken 
-//want daar horen welbepaalde div en button bij
-//[!] eem idee is om de map misschien niet te gebruiken maar de 4 (slechts 4) divs 
-//[!] en hun bijbehorende childrens aan te kleden en "met de hand" toe te voegen aan
-//[!] de DOM
-for (let index: number = 0; index < 4; index++) {
-    var span=document.createElement('span');
-    var div=document.createElement('div');
-    var button=document.createElement('button');    
-    span.appendChild(div);
-    span.appendChild(button);
-    console.log()
-
-//oorspronkelijke functie om de divs en buttons aan een array toe te voegen (moet dat wel?) 
+//oorspronkelijke functie om de divs en buttons aan een array toe te voegen. 
     for (let index: number = 0; index < 4; index++) {
     elementSets.push({
+        'span': document.createElement('span'),   
         'div': document.createElement('div'),
-        'button': document.createElement('button'),
-        'span': document.createElement('span')         
+        'button': document.createElement('button')         
     })
 }
 
-//goed (met uitbreiding voor tekst in de div. Groot, vet en in het midden).
-//[!] en de div float. Misschien niet hier doen! 
+// takeaways voor deze uitbreiding:
+// map is een operatie op de elementen van de/het array. De elementen worden in volgorde (van toevoeging aan het array)
+// gemuteerd volgens de lijst met operaties in de functie. Kennelijk is het een soort geneste iteratie
+// ik heb span als element toegevoegd aan de iteratie en in de fo-loop hierboven meegenomen in de creatie. Naar mijn idee
+// heb je dan een verzameling DOM-elementen od althans referenties. De structurering doe ik hier beneden door div en button to te voegen aan 
+// span met appendChild. Ze worden dan genest opgenomen, zoals ook blijkt uit de gegenereerde HTML (F12)
+//-
 elementSets.map( (elem, index) => {
     let colorChangeClass = new numericColor(elem.div);
-    
+    (elem.span as HTMLElement).appendChild(elem.div);
+    (elem.span as HTMLElement).appendChild(elem.button);
     (elem.div as HTMLElement).style.width = squareSize;
     (elem.div as HTMLElement).style.height = squareSize;
     (elem.div as HTMLElement).style.textAlign='center';
@@ -113,19 +103,21 @@ elementSets.map( (elem, index) => {
     (elem.div as HTMLElement).style.lineHeight='100px';
     (elem.div as HTMLElement).style.fontSize='40px';
     (elem.div as HTMLElement).style.fontStyle='bold';
-    (elem.div as HTMLElement).style.float='left';
+    (elem.span as HTMLElement).style.float='left';
     colorChangeClass.changeColor(Colors[Math.floor(Math.random() * 4)]);
     elem.button.textContent = "Change Color";
     (elem.button as HTMLElement).onclick = (event) => {
         colorChangeClass.changeColor(Colors[getRandomIntInclusive(1, 6)]);
     }
-    // een poging om de spam sub-tree samen te stellen. Misschien niet in de map functie
-    document.body.appendChild(elem.button);
-    document.body.appendChild(elem.div);
-    //document.body.appendChild(elem.span);
-    //document.getElementById("span").appendChild(elem.div);
-    //document.getElementById("span").appendChild(elem.button);
-    
-})}
+    //dit is dus geen append aan de Document (DOM) maar specifiek aan de bodytag/
+    document.body.appendChild(elem.span);    
+})
 
-console.log("yooooo");
+//big button is toegevoegd. Moet nog actie aan toewijzen. Doen we later
+bigButton.style.width = squareSize;
+bigButton.style.height = squareSize;
+bigButton.textContent="ROLLDICE";
+document.body.appendChild(bigButton);
+
+//hoe het array eruit ziet
+console.log(elementSets[1])
