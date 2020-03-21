@@ -8,5 +8,10 @@
 
 Klaar voor vandaag met Python
 
- 
+
+20200320|09:07
+Ik probeer een mix van tekst en .md
+Verder met rot13
+Gelukt Tada. Alleen nog ff inleveren
+
 
