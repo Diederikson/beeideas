@@ -18,9 +18,9 @@ Aanpak voor nu: kopieren van de code van exercise 3, en dan  aanpassen waar nodi
 [_] Opschonen
 [_] Herbouwen 
 
-
+*/
 interface ElementSet {
-    'span': Element,
+   // 'span': Element,
     'div': Element,
     'button': Element
     
@@ -85,19 +85,20 @@ let Elements = {
 //[!] eem idee is om de map misschien niet te gebruiken maar de 4 (slechts 4) divs 
 //[!] en hun bijbehorende childrens aan te kleden en "met de hand" toe te voegen aan
 //[!] de DOM
-for (let index: number = 0; index < 4; index++) {
-    var span=document.createElement('span');
-    var div=document.createElement('div');
-    var button=document.createElement('button');    
-    span.appendChild(div);
-    span.appendChild(button);
-    console.log()
+//for (let index: number = 0; index < 4; index++) {
+ //   var span=document.createElement('span');
+ //   var div=document.createElement('div');
+ //   var button=document.createElement('button');    
+ //   span.appendChild(div);
+ //   span.appendChild(button);
+ //   console.log()
 
 //oorspronkelijke functie om de divs en buttons aan een array toe te voegen (moet dat wel?) 
     for (let index: number = 0; index < 4; index++) {
     elementSets.push({
         'div': document.createElement('div'),
-        'button': document.createElement('button')
+        'button': document.createElement('button'),
+   //     'span': document.createElement('span')
     })
 }
 
@@ -120,9 +121,11 @@ elementSets.map( (elem, index) => {
         colorChangeClass.changeColor(Colors[getRandomIntInclusive(1, 6)]);
     }
     // een poging om de spam sub-tree samen te stellen. Misschien niet in de map functie
-    document.body.appendChild(elem.span);
-    document.getElementById("span").appendChild(elem.div);
-    document.getElementById("span").appendChild(elem.button);
-    
+    //document.body.appendChild(elem.span);
+    //document.getElementById("span").appendChild(elem.div);
+    //document.getElementById("span").appendChild(elem.button);
+    document.body.appendChild(elem.button);
+    document.body.appendChild(elem.div);
 })
-*/
+
+console.log("ttetetttet");

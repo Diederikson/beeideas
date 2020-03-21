@@ -53,7 +53,7 @@ for (let index: number = 0; index < 4; index++) {
         'button': document.createElement('button')
     })
 }
-
+ 
 elementSets.map( (elem, index) => {
     let colorChangeClass = new numericColor(elem.div);
     
