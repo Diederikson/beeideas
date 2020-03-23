@@ -18,8 +18,14 @@
 #DJO20200322|11:04
 #---
 #Takeaway:
-import collections
-
+#collections gebruikt: is een subclass van dictionary
+#zie: docs.python.org
+#elements is veelbelovend: geeft een array terug met
+#elk element zovaak als het is geteld
+#: idee itere
+#---
+import collections as col
+import numpy as np
 
 def score(dice):
     #kunnen 3 enen?
@@ -32,5 +38,18 @@ a=[5,1,3,4,1]
 b=[1,1,1,3,1]
 c=[2,4,4,5,4]
 
-counter=collections.Counter(a)
+counter=col.Counter(a)
+y=np.array(a)
 print(counter)
+print((y==1).sum())
+print((y==2).sum())
+print((y==3).sum())
+print((y==4).sum())
+print((y==5).sum())
+print((y==6).sum())
+
+#probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
+#behandeling krijgt met iets andere puntentelling
+#telling(5)
+#~Zie Anki voor verder (Lambda Greed is Good)
+
