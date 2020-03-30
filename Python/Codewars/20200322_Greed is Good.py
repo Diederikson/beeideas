@@ -22,12 +22,18 @@
 #zie: docs.python.org
 #elements is veelbelovend: geeft een array terug met
 #elk element zovaak als het is geteld
-#: idee itere
+#: idee itereren. Merk ook op dat er maar 1 getal 3 x kan
+#voorkomen. Dus how about a testcase 
 #---
-import collections as col
+#import collections as col: deez is niet nodig
 import numpy as np
 
 def score(dice):
+
+    #Compute 3 or more eyes
+    def compute_eyes(ey):
+        return (de score van 3) plus de score van de resterende
+    (zo die er al is)
     #kunnen 3 enen?
     #kunnen 3 zessen?
     #etc
@@ -38,8 +44,8 @@ a=[5,1,3,4,1]
 b=[1,1,1,3,1]
 c=[2,4,4,5,4]
 
-counter=col.Counter(a)
-y=np.array(a)
+counter=col.Counter(b)
+y=np.array(b)
 print(counter)
 print((y==1).sum())
 print((y==2).sum())
@@ -52,4 +58,9 @@ print((y==6).sum())
 #behandeling krijgt met iets andere puntentelling
 #telling(5)
 #~Zie Anki voor verder (Lambda Greed is Good)
-
+#Of zoiets als
+#we fietsen door alle cijfers heen
+#als een cijfer 3 of meer keer voorkomt
+#roepen we een hendy functie aan die te telling teuggeeft
+#zo niet dan tellen we het aantal punten 'gewoon' op
+#en retourneren het resultaat

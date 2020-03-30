@@ -15,3 +15,27 @@ Verder met rot13
 Gelukt Tada. Alleen nog ff inleveren
 
 
+20200330|09:52
+Takeaway van Greed is good: als in de gevraagde functie
+nog weer functie voorkomen dan identen. Bijv rot13
+
+def rot13(message):
+    def rot_upper(s):
+        if ord(s)<=77: return chr(ord(s)+13)
+        return chr(ord(s)-13)
+
+    def rot_lower(s):
+        if ord(s)<=109: return chr(ord(s)+13)
+        return chr(ord(s)-13)
+
+    def code_it(s):
+        if ord(s)>=65 and ord(s)<=90: return rot_upper(s)
+        if ord(s)>=97 and ord(s)<=122: return rot_lower(s)
+        return s
+
+    rs= "".join([code_it(c) for c in message])
+    return rs
+
+rot_lower rot_upper en code_it zijn drie functies binnen de opdracht
+
+
