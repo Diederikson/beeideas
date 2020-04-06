@@ -47,12 +47,24 @@ c=[2,4,4,5,4]
 y=np.array(b)
 print(y,b)
 print((y==1).sum())
+y=y[y!=1] #https://thispointer.com/delete-elements-from-a-numpy-array-by-value-or-conditions-in-python/
+print(y)
 print((y==2).sum())
+#y=y[y!=2]
+y.pop(1)
+print(y)
 print((y==3).sum())
+y=y[y!=3]
+print(y)
 print((y==4).sum())
+y=y[y!=4]
+print(y)
 print((y==5).sum())
+y=y[y!=5]
+print(y)
 print((y==6).sum())
-
+y=y[y!=6]
+print(y)
 #probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
 #behandeling krijgt met iets andere puntentelling
 #telling(5)
@@ -63,3 +75,6 @@ print((y==6).sum())
 #roepen we een hendy functie aan die te telling teuggeeft
 #zo niet dan tellen we het aantal punten 'gewoon' op
 #en retourneren het resultaat
+#hoe weet je dan of het er méér dan drie zijn?
+#En wat is het syntax verschil tussen list arrays en numpy arrays
+#numpy arrays hebben geen komma?!
