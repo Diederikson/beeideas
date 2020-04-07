@@ -18,14 +18,18 @@
 #DJO20200322|11:04
 #---
 #Takeaway:
-#. collections gebruikt: is een subclass van dictionary
-#  zie: docs.python.org
-#. elements is veelbelovend: geeft een array terug met
-#  elk element zovaak als het is geteld
-#. idee itereren. Merk ook op dat er maar 1 getal 3 x kan
-#. voorkomen. Dus how about a testcase 
+# x collections uiteindelijk niet gebruikt:
+#   is een subclass van dictionary
+#   zie evt: docs.python.org
 #---
-#import collections as col: deez is niet nodig
+# . elements is veelbelovend: geeft een array terug met
+#   elk element zovaak als het is geteld
+#---
+# . idee itereren. Merk ook op dat er maar 1 getal 3 x kan
+#   voorkomen. Dus how about a testcase 
+#---
+# v
+
 import numpy as np
 
 def score(dice):
@@ -47,6 +51,7 @@ c=[2,4,4,5,4]
 y=np.array(b)
 print(y,b)
 print((y==1).sum())
+
 y=y[y!=1] #https://thispointer.com/delete-elements-from-a-numpy-array-by-value-or-conditions-in-python/
 print(y)
 print((y==2).sum())
@@ -78,3 +83,5 @@ print(y)
 #hoe weet je dan of het er méér dan drie zijn?
 #En wat is het syntax verschil tussen list arrays en numpy arrays
 #numpy arrays hebben geen komma?!
+#Je maakt er wel een bende van
+
