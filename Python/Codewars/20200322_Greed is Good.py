@@ -28,12 +28,22 @@
 # . idee itereren. Merk ook op dat er maar 1 getal 3 x kan
 #   voorkomen. Dus how about a testcase 
 #---
+# . print((y==1).sum()) # tel Trues in het equals array
+# . y=y[y==1] # bewaar alle enen! -> nieuw array!
+# . y=y[y!=1] # haal de enen eruit
+#---
 # v
 
 import numpy as np
 
 def score(dice):
-    
+    y=np.array(dice)
+    result=0
+    #for x in range(1,6): Nee, eerst maar es eentje proberen.
+    result=(y==1).sum()
+    if result>=3:
+        result=1000+result-3
+    return result
 
     #Compute 3 or more eyes
     #def compute_eyes(ey):
@@ -50,18 +60,11 @@ def score(dice):
     pass
 
 a=[5,1,3,4,1]
-b=[1,1,1,3,1]
+b=[2,1,1,2,2]
 c=[2,4,4,5,4]
 
-y=np.array(b)
-print(y,b)
-print(y==1)
-print(y!=1)
-print((y==1).sum()) # tel Trues in het equals array
-y=y[y==1] # bewaar alle enen! 
-#y=y[y!=1] # haal de enen eruit
-#Checken maar (per stuk anders heb je een leeg array)
-print(y)
+print(score(b))
+
 #probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
 #behandeling krijgt met iets andere puntentelling
 #telling(5)
@@ -74,3 +77,4 @@ print(y)
 #en retourneren het resultaat
 #
 #hoe weet je dan of het er méér dan drie zijn?
+#je kan ze tellen en dan kijken of er drie af te trekken zijn 
