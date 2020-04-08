@@ -41,34 +41,26 @@ def score(dice):
     #    (zo die er al is). Kunnen 100 zijn voor een (elke?) 1
     #    Kunnen 50 zijn voor een (elke?) 5
     #return
+    # bruikbare methodes
+    # .sum() telt arrayelementen bij elkaar op
+    # equals operator op array (==) true als erin false als niet
+    # voor elk element in de array. Returns arrau met T en F
+    # True heeft als waarde 1, dus op die manier kan je
+    # elementen met een bepaalde waarde tellen.
     pass
 
 a=[5,1,3,4,1]
 b=[1,1,1,3,1]
 c=[2,4,4,5,4]
 
-#counter=col.Counter(b)
 y=np.array(b)
 print(y,b)
-print((y==1).sum())
-
-y=y[y!=1] #https://thispointer.com/delete-elements-from-a-numpy-array-by-value-or-conditions-in-python/
-print(y)
-print((y==2).sum())
-#y=y[y!=2]
-y.pop(1)
-print(y)
-print((y==3).sum())
-y=y[y!=3]
-print(y)
-print((y==4).sum())
-y=y[y!=4]
-print(y)
-print((y==5).sum())
-y=y[y!=5]
-print(y)
-print((y==6).sum())
-y=y[y!=6]
+print(y==1)
+print(y!=1)
+print((y==1).sum()) # tel Trues in het equals array
+y=y[y==1] # bewaar alle enen! 
+#y=y[y!=1] # haal de enen eruit
+#Checken maar (per stuk anders heb je een leeg array)
 print(y)
 #probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
 #behandeling krijgt met iets andere puntentelling
@@ -80,8 +72,5 @@ print(y)
 #roepen we een hendy functie aan die te telling teuggeeft
 #zo niet dan tellen we het aantal punten 'gewoon' op
 #en retourneren het resultaat
+#
 #hoe weet je dan of het er méér dan drie zijn?
-#En wat is het syntax verschil tussen list arrays en numpy arrays
-#numpy arrays hebben geen komma?!
-#Je maakt er wel een bende van
-
