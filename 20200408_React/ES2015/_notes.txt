@@ -1,0 +1,25 @@
+21:23 12-4-2020
+observations videoseries
+- ... (een aantal komt nog wel eens)
+
+[X]
+https://youtu.be/izlLVx_dTH0?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=208
+- In tsconfig moet gezet worden "noImplicitAny": false, (r.27), anders klaagt de compiler dat de formele parameter name impliciet 'any'is.  Dit gaat wel even ten koste van het hele begrip hoisten. Waarmee bedoeld wordt dat je een variable overal in een scope mag declareren (var). Wordt naar boven geslingerd.
+takeway: var heeft functional scope: een variabele gedeclareerd in een functie met var is zichtbaar in die functie
+let (es2015) heeft blockscope (curly braces scope)
+in tutorial 5 vervangen we var (functional scope, scope in de functie) door let (block scope). gaat mis want console staat buiten de curly braces van de if else statement. Oplossen door let in de buitenste curly braces te plaatsen . let is scope gebonden en kan een variabele in ee scope op een andere waarde zetten. Daarna neemt die var zn oude waarde weer aan.
+let wordt niet gehoist en je kunt een variabele niet redeclaren.
+
+
+var a=1;
+var a=2;
+
+gaat
+
+let a=1;
+let a=2;
+
+error: Cannot redeclare block-scoped variable
+
+En zo zijn we gestopt.
+https://youtu.be/WiwMkh9_WGw?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=14
