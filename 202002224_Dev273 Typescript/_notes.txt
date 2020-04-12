@@ -1,0 +1,246 @@
+﻿14:28 24/02/2020
+Intoduction and Types in TypeScript
+Keywords
+let: Declaratie 
+let x:number
+let x:number= -6 // Declareren en initieren in één stap
+
+primitives: numbers strings booleans
+Maar dan gaat het verder on and on over numbers strings
+Niet over Numbers en Strings, want dat zijn dan weer Objecten en geen primitieven
+
+Complex en non primitive: Classes en Interfaces.
+
+We moesten er maar weer eens mee stoppen
+Tot morgen
+
+[SHIFT][W|In][S] Snip!
+
+09:01 27/02/2020
+In de bus: Beschrijving van Boolean String Tupel en Enum
+gebookiemarkt
+
+13:22 02/03/2020
+Kennelijk loopt het hele javascript gebeuren (Typescript) via nodejs.
+OK Boomer
+we hebben al eerder gedaan 
+npm install -g typescript
+
+Maar toen bleken er foutjes te ontstaan (met name console en alert werden niet meer herkend) dus toen gedaan
+
+npm install -g typescript@latest. en dan hebben we nu geen foutjes meer.
+
+Slimme vragen
+- Hoe verhoud tsc (de filetcompany) zich tot de broser. Na de update had ik geen problemen meer.
+- de switch -g staat voor global
+
+Lep top als je werkt vanuit Visual Studio Code dan kan je als volgt naar de console printen:
+console.log(sentence)
+
+Volgorde: 
+Er moet een tsconfig.json aanwezig zijn met de volgende inhoud:
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "sourceMap": true
+    }
+  }
+
+compileren tsc filenaam
+OF een watch aanzetten (ctrlshiftb<<< dan wordt bij elke keer seeven een nieuwe build gemaak
+en dan is er nog de build bouwen: (CTRL SHIFT B)
+en build watchen. En dat zijn dan weer aparte processen.
+Dat watchen zorgt voor automatisch hercompileren zodat wijzigingen weer makkelijk doorgevoerd worden (hoef je niet de hele tijd opieuw zelf compile te doen.)
+
+Ctrl K+C comment een heel blok uit.
+10:37 03/03/2020
+enum gedaan en nog een keer terug naar types en complex types
+
+De dubbele punt is declaratie in TypeScript
+De dubbele punt bij een functie is de returntype
+
+accollades bij en declaratie beschijven een interface (verplichte variabelen)
+function printLabel(labelledObj: { label: string }) {
+    console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+
+(Zwischen durch: coder gebruikt eslint, prettierjs, phpcs  gofmt voor goeie automachische codelayout voor uniformiteit. Weer een onderwerp waarover je niet veel hoort)
+
+07:22 04/03/2020
+Zo en dan nu na een boel geharriewar verder met de cursus
+
+Interfaces: geeft bij een functie aan wat er minimaal aan parameters mee moet
+
+function printLabel(labelledObj: { label: string }) {
+    console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+
+De interface is nu een accoladepaar maar dat kan als volgt beter gedefinieerd worden
+
+interface LabelledValue {
+    label: string;
+}
+
+function printLabel(labelledObj: LabelledValue) {
+    console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+
+hmmm. Niet echt java interface Je hoeft niet expliciet de interface te melden als de aanroep maar  voldoet. En de volgorde als er meerdere vars zijn maakt ook niet uit.
+
+verder nog optionele variabelen:
+
+interface SquareConfig {
+    color?: string;
+    width?: number;
+}
+
+interface Point {
+    readonly x: number;
+    readonly y: number;
+}
+
+Alleen bij creatie kan een waarde toegekend worden, daarna niet meer
+
+Er is zelfs een readonlyArray type met alle setters eruit gesloopt
+10:53 05/03/2020
+In alle rust nog een keer interfaces bestudeerd. De return staat bij de signatuur helemaal aan het einde. (in het geval van een  functie)
+12:47 05/03/2020
+Nu interfaces. Blijkt dat er een static en een instancepart bestaat, die apart geconstrueerd moeten worden.
+Er is een interface gedeelte met de properties en een interface gedeelte met alleen ? de constructor
+En dan is er nog prototyping om achteraf aan alle instanties van Functies nog een property toe te voegen
+
+13:23 05/03/2020
+Interface nog een  herhalen. voor nu onthouden dat de constructor ondergebracht is in een interface en de properties methoden en functies in een aparte interface.
+->In deez tutorial https://www.tutorialsteacher.com/typescript/type-assertion
+-> lees ik over interfaces: Interfaces are used to define the structure of variables.
+
+Kan het zijn dat TypeScript heel erg gepreoccupeerd is met variablelen typen?
+
+Generics en Casting zijn equivaleenten van Type Assertion. Typebepaling
+
+Zie ook en vooral die webpagina nogmaals.
+
+[?] Toch nog een vraagje: 
+let code: any = "123"; 
+let employeeCode = <number> code; 
+console.log(typeof(employeeCode)); //Output: number
+
+Geeft als output string. Het lijkt erop alsof JS het type inferred.
+
+[?] JSX Javascript extension? wat is dit?
+
+13:27 05/03/2020
+Gebleven bij Function types. Wat een zootje
+
+Het lijkt erop dat Classes, functions, en zo heel erg loosly zijn binnen TS
+Tis toch om gek van te worden dat je een complete functie in een return statement kunt teruggeven?
+
+10:44 09/03/2020
+Welkom we gaan  maar es verder
+npm install --save-dev @angular/cli@latest // fijn angular in typescript
+
+11:43 09/03/2020
+Interface> herschrijven van de signature van de formele parameter. Die staat normaal in de header uitgeschreven, maar wordt dan vervangen door de naam van de interface.
+Er kunnen optionele parameters zijn. Door excessive type checking moeten deze bij het aanroepen van de functie wel goed gespeld zijn. Anders foutmeling. Beetje tegenintuitief. En dat is weer te ondervangen met [propName: string]: any;
+
+- property kan read only zijn. Dan alleen waardetoekenning mogelijk bij constructie, daarn aniet meer.
+Een variabele kan een constante zijn, readonly geldt alleen voor properties.
+
+Do not to try get around excessive checks
+Het loopt alweer naar het einde. Br:. eerste opz hoe laat is het?
+Interfaces voor typechecking classes en functions. We zijn gebleven bij Indexable types. Thuis maares verder.
+13:24 10/03/2020
+Zoozoo inmiddels alweer bijna het einde van de dag. Wat nog te doen?
+een hoofdstukje en wat code runnen in probemachen2
+[!] kom je erachter dat een variabele in de ene file niet meer gebruikt (init) mag worden in het andere. m.a.w. eenmaal gedeclareerd lijken ze global te zijn?
+
+[!] tsc is om te compileren
+[!] node program.js is om te runnen
+[!] console.log gaat naar de debug console.
+
+Sorry heb er een beetje een teringzooi van gemaakt. Zit nu bij Module 2 Programming an Types...
+
+Not to worry. We rauzen er gewoon doorheen en dan nogmaals in de rerun. Duurt toch wel even voor we alle nuances hebben opgepakt.
+
+█ 11:08 11/03/2020 █  <<Full block   
+Course  Module 2 | Programming and Types in TypeScript  Tutorial Lab02 Classes Enums AndInterfaces  To Use Classes
+===
+- Classes zijn syntax sugar for accesing the prototype models of a fuction.
+- Bij de classdefinition van colorChange wordt div gedeclareerd zonder let. Hierdoor ontstaat de scope this.{variable} ofwel this.div (ik denk dan dat let een variable globaal declareert. Zoiets is het idd wel, maar de gevonden uitleg op StackoverFlow is complex:) https://stackoverflow.com/questions/39414692/a-javascript-let-global-variable-is-not-a-property-of-window-unlike-a-global
+- We voegen een constructor toe voor te instantieren (met div als private)
+- En een methode om de kleur te veranderen.
+- En nog een helboel andere dingen and then we assemble and build the rocket. Wat een ongeloofelijke kut tutorial. Maar goed
+
+11:58 11/03/2020
+Luns
+
+13:22 11/03/2020
+Een paar gebbetjes toegevoegd een random functie om te initialiseren met een paar leuke kleurtjes. 
+[!] De volgorde waarin alles in TS staat is van groot belang. Progje werkte ff niet omdat de enums helemaal onderaan stonden (gaat m niet worden.)
+Of zoals het op stackoverflow staat :
+
+TypeScript itself not sensitive, but this compiled to JS.
+
+class A extends B {}
+class B {}
+In JS:
+
+var A = (function (_super) { /* ... */ })(B);
+var B = (function () { /* ... */  })();
+B is undefined on line 1.
+
+13:24 11/03/2020
+
+En nog wat meer uitgelegd en workaround:
+https://stackoverflow.com/questions/36645486/order-of-class-definitions-any-way-to-circumvent
+
+█13:48 11/03/2020█
+Course  Module 2 | Programming and Types in TypeScript  Tutorial Lab03 Extending Classes  To Extend Classes
+===
+- Je extend een Class naar een subclass
+- De functies die overgeërfd zijn kan je overloaden door de signatuur te veranderen
+- De compiler gaat dan piepen omdat de type van de header van de functie van de subclass niet overeen komt met de header van de superklas.
+- In de superklasse gebruik je in de header van de functie een union om die error tegen te gaan.
+
+- vervolgens moet je ook nog de superklasse kortsluiten voor de parameter die hij ZELF zou verwerken (er moet true terug gegeven worden)
+- Waarom? Omdat sub en superklasse BEIDE vuren bij de aanroep van de overloaded functie. en als die aanroep bedoeld is voor de subklasse dan moet de superklasse ff zn muil houden
+ 
+█14:35 11/03/2020█
+Course  Module 2 | Programming and Types in TypeScript  Self Assessment Lab_Dice Roller  Self Assessment Lab
+===
+- Doorgelezen, we gaan er vanavond mee verder 
+eindtijden zou ook mooi zijn
+14:45 11/03/2020<
+
+█09:15 12/03/2020█
+Goed. Gisteren dus uitgevonden hoe je met innerHTML een divtag kunt voorzien van tekst. Verder is de tsconfig.json heel handig om vsc te configureren voor automagisch compileren (via [CTRL]-[SHIFT]-[B]. Het verdient aanbeveling om dat nog s uit te diepen. Is een taakje. De tsc compiler compileert echt alles wat in de folder staat. Nou goed verder maar. 
+Met de dobbelsteenapp.
+Een paar dingen die opballen
+- er is een elementsSets functie die alle dom elementen blijkbaar op zn plek zet.
+- met as assert as HTML element kun je vervolgens alle element properties van een variable div of button aanpassen
+
+22:25 12/03/2020
+ff thuis: rolldice ff opgeschoond. Kunnen we morgen verder
+
+14:31 17-3-2020
+Verder gegaan met rolldice. Moet nog uitzoeken hoe we die opdracht afmaken, maar voor nu heb ik een inzichtslag geslagen. Kijk even naar de comments in rolldice.ts. Is mooi! goed gezien!
+Ten overvloedde: we doen alles via GItHub. Dat is beter dan Dropbox
+
+en vergeet ook niet de watch te starten met ctrlshift B. Anders beurt er niks
+
+15:02 17-3-2020
+Morgen verder met Neemspeeces
+
+
+ 
+

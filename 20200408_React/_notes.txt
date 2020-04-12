@@ -1,0 +1,54 @@
+22:24 28-3-2020
+[_] inlogscherm voorbeeld nabouwen. (url 
+[_] navragen: ReactWebApp van Frank heeft de link met de backend in de scr>config.ts file staan: daar staat een link naar localhost
+Nog maares kijken en of vragen wat ie allemaal heeft goimaakt.
+We gaan dit heulemaal laten vallen de pallen,
+
+15:10 30-3-2020
+TODO
+[_] Youtubevideo van Mosh vanaf 4594
+
+https://stackoverflow.com/questions/59354180/error-please-upgrade-your-dependencies-to-the-actual-version-of-core-js3
+
+Dit hoort hier mmschn niet maar goed dependecies opleuken
+- Kan het zijn dat met het deleten van de node_modules de global modulesmap bedoeld wordt? en hoe zit het dan met versiebeheer van node.js (dat je virtuele configs naast elkaar kan hebben?) Je ne sai quoa. En alles toch maar in da github doen. Hoest met Anki?
+
+Lekker git ff aansluiten op azuredevops. The Microsoft way. Heb je ff een dag?!
+
+13:20 2-4-2020
+Bestuderen Front end (we'lldo in typora DJOKB Diederik Jan Oudshoorn Knowledge Base)
+PEPO
+9:12 3-4-2020
+[_] Map aanmaken in git DJO
+[_] Redux sample app
+[_] Architectuur
+
+22:53 3-4-2020
+Jaha dat getrut met install als die dependencies weer niet kloppen. Nu is er WItewashh 3 om automagisch te upgraden:
+(nog niet gebrobemacht)
+https://classic.yarnpkg.com/en/docs/cli/upgrade/
+
+EN DaT BrEngT oNs HIer
+https://classic.yarnpkg.com/en/docs/yarn-workflow/
+Gaap
+
+Nou dat werkt. Dus laten we morgen beginnen om de Localization uit te zoeken (Learn more in het menu van de talen)
+
+En dan volgt een hele boom met info oa
+https://www.i18next.com/translation-function/essentials
+
+enfin de videoeoeo
+
+
+22:06 8-4-2020
+Morgen verdur
+https://youtu.be/CVpUuw9XSjY?t=943
+
+21:12 09/04/2020
+https://youtu.be/CVpUuw9XSjY?t=1904
+
+kijk even de bookmarkstoolbarfolderr na
+
+
+
+
