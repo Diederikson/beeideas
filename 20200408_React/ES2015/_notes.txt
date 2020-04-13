@@ -20,6 +20,39 @@ let a=1;
 let a=2;
 
 error: Cannot redeclare block-scoped variable
+[?] So wie so raar dat je variabelen meermaals kunt declareren.
+
 
 En zo zijn we gestopt.
 https://youtu.be/WiwMkh9_WGw?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=14
+
+14:05 13-4-2020
+[X] favicon toegevoegd
+[!] Live reload is een onderdeel van webpack. Dus als we dat ooit instalieren gaat de website 3000 ook automagisch
+[!] Tutorial 7. The can of worms opens wider! Iffys zie hier:
+https://stackabuse.com/javascripts-immediately-invoked-function-expressions/
+
+[!] arrow functions dont have there own this (gewone functie creeren hun eigen context, Overigens ook weer een indicatie hoe raar het is dat je functions als 1st class objects bombardeerd. He bombardeerd, Willyyyyyy
+[!] is es2015 kan je initwaarden meegeven bij decalaratie van functies (sterker de initwaarde is de default als je geen waarde meegeeft bij aanroepen
+
+[!] functieaanroep meerdere parameters 1 parameter niet: gebruik undefined. De default kan ook een formuletje zijn of zelfs een arrow function. You can go holy moly dipshit on this one
+https://youtu.be/6eOOh1b03-o?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=377 
+
+[!] ...parameter is de rest parameter. Gebruikt bij formele parameter van de functie . 1 of meerdere parameters wat er ook overblijft.
+
+De tegenhanger heet de spread operator en ziet er hetzelfde uit. Wordt alleen gebruikt bij het aanroepen nen is dus de actuele parameter. Zie 
+https://youtu.be/Fc6DPYx9aQU?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=150
+
+Alles leuk en aardig maar dit zijn 50 filmpjes. Laten we zeggen: ik ga die gast zn reduxcourse volgen en deze rest komt nog welles. Ik ben gebleven bij:
+https://youtu.be/Fc6DPYx9aQU?list=PLC3y8-rFHvwhI0V5mE9Vu6Nm-nap8EcjV&t=150
+
+
+Gaat helemaal goed komen
+
+We zijn nu hier
+16:58 13-4-2020
+https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=1
+
+Er wordt npx create-react-app gebruikt. Dit is het Runnen van een package -vs- het Installeren van een package. Voordelen: je gebruikt altijd de laatste versie. Wat ook (nog) kan is eerst installeren npm install create-react-app -g en dan runnen. 
+ 
+ 

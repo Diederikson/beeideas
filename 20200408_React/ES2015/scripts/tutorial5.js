@@ -1,5 +1,5 @@
 "use strict";
-function greetingsEarthling(name) {
+function greetingsEarthling5(name) {
     if (name === "Diederik") {
         var greet = "Hello, Diederik!";
     }
@@ -8,5 +8,5 @@ function greetingsEarthling(name) {
     }
     console.log(greet);
 }
-greetingsEarthling("Diederik");
+greetingsEarthling5("Diederik");
 //# sourceMappingURL=tutorial5.js.map
