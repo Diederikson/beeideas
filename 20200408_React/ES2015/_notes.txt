@@ -55,4 +55,57 @@ https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rx
 
 Er wordt npx create-react-app gebruikt. Dit is het Runnen van een package -vs- het Installeren van een package. Voordelen: je gebruikt altijd de laatste versie. Wat ook (nog) kan is eerst installeren npm install create-react-app -g en dan runnen. 
  
+COmponents 1 per js file. Pascal case convention (Hoofletturs)
+
+[!] Export gaat default (dan mag je hem bij de import elke naam geven die je leuk vind. Bij een named export, moet je de naam van de functie aanhouden. En dan ook nog eens als curly braces.
+import {Greet (naam van de const functie) } from,,,,,, 
+
+export const Greet =(),,,,,
+default exports komen vaker voor.
+[!] class components nemen net als functional components props aan en geven html (jsx) af maar kennen daarnaast nog een internal state
+
+[!] Functional components hebben in het gebruik de voorkeur (if you can choose between functional and class go for functional)
+
+Voordelen van Functional components
+- no this keyword
+- Solution without state (less overhead)
+- Mailnly respponsible for ui
+- also called Stateless / dumb or presentational 
+
+Voordelen van class components
+- feature ritch
+- maintain private data state
+- Complex ui logic
+- Provide lifecycle hooks
+-  also called Statefull / Smart / Container 
+
+Gelukkig is er een update die dit allemaal weer te niet doet vanaf 
+16.7 kan je state en hooks en dergelijke ook gebruiken in functional clases. Wijziging is opt in en 100% backwards compatible No breaking changes. Functional en Classcomponents lijken dus iets meer op elkaar.
+
+JSX is een extension to js syntax
+jsx makes code simppeler en elegant
+
+[!] Verschillen tussen html en jsx
+Class->ClassName (Class is reserved word)
+for->htmlFor
+camelCase prperty naming convention
+* onclick wordt onClick
+* tabindex wordt tabIndex
+
+en er zitten nog meer breaking changes aan te komen
+ 
+
+
+
+Sideline uitleg van jsx
+done
+
+jsx kan nu maar 1 element returnen  dus als je meerdere elements wil terugsturen: gebruik een div tag.
+
+Tot hiero. Verder met
+https://youtu.be/m7OWXtbiXX8?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&t=522
+
+
+
+
  
