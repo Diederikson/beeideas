@@ -37,13 +37,19 @@
 import numpy as np
 
 def score(dice):
+    scoreTable=[1000,200,300,400,500,600]
     y=np.array(dice)
+    
     result=0
+    
     #for x in range(1,6): Nee, eerst maar es eentje proberen.
     result=(y==1).sum()
+    
     if result>=3:
-        result=1000+result-3
+        result=scoreTable[y]+result-3
     return result
+
+ 
 
     #Compute 3 or more eyes
     #def compute_eyes(ey):
@@ -63,7 +69,8 @@ a=[5,1,3,4,1]
 b=[2,1,1,2,2]
 c=[2,4,4,5,4]
 
-print(score(b))
+print('Haaai', score(b))
+
 
 #probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
 #behandeling krijgt met iets andere puntentelling
