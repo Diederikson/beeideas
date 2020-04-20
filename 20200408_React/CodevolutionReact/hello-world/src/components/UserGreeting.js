@@ -5,23 +5,21 @@ class UserGreeting extends Component {
     super(props);
 
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
   }
 
-  render() {
-    if (this.state.isLoggedIn) {
-      return <div>Yo! Youre logged in !!</div>;
-    } else {
-      return <div>Welkom gast!</div>;
-    }
-    // return (
-    //     <div>
-    //        <div>Welcome Diewd</div>
-    //        <div>Welcome Guest overal afblijven!</div>
-    //     </div>
-    // )
-  }
+
+//   render() {
+//     return this.state.isLoggedIn ? <div>YO!</div> : <div>No!</div>;
+//   }
+
+  // return (
+  //     <div>
+  //        <div>Welcome Diewd</div>
+  //        <div>Welcome Guest overal afblijven!</div>
+  //     </div>
+  // )
 }
 
 export default UserGreeting;
