@@ -1,4 +1,4 @@
-#Greed is Good | Codewars
+ #Greed is Good | Codewars
 #invoer is een array van 6 cijfers
 #daar moet een score uitkomen volgens deze tabel:
 #Three 1's => 1000 points
@@ -15,7 +15,8 @@
 #5 1 3 4 1   50 + 2 * 100 = 250
 #1 1 1 3 1   1000 + 100 = 1100
 #2 4 4 5 4   400 + 50 = 450
-#DJO20200322|11:04
+#DJO B.20200322|11:04 - E.20200420|10:32 D.28d23h28m
+# via https://www.timeanddate.com/date/timeduration.html
 #---
 #Takeaway:
 # x collections uiteindelijk niet gebruikt:
@@ -32,56 +33,40 @@
 # . y=y[y==1] # bewaar alle enen! -> nieuw array!
 # . y=y[y!=1] # haal de enen eruit
 #---
-# v
+# . Een variabele ge-init met rechte haken en cijfers lijkt
+# . een array te zijn maar is dat _Niet. Het is een list
+# . Python werkt default met lists. Wil je een array creeren
+# . dan doe je dat het beste met numpy.array (zie r. 45)
+# . Optimalisatie: we maken nu het array kleiner door 
+# . de triple ogen er uit te halen. Netter is het om het
+# . array onveranderd te laten. wat je dan moet tellen zijn
+# . de voorkomens van 1 / 5 . Dat doen we nog. Ooit
+# . Beuargh. Test werken niet goed. Met het verwijderen van
+# . alle gelijke waarden uit het array verrlies je een
+# . mogelijke telling van 1 of 2 enen of vijven.
+# . opgelost door in de iteratie de losse 1en en 5en te tellen
+# . Zie r. 62.
 
 import numpy as np
 
 def score(dice):
-    scoreTable=[1000,200,300,400,500,600]
-    y=np.array(dice)
-    
     result=0
+    scoreTable=np.array([1000,200,300,400,500,600])
+    scoreOneFive=np.array([100,0,0,0,50,0])
+    diceArray=np.array(dice)
     
-    #for x in range(1,6): Nee, eerst maar es eentje proberen.
-    result=(y==1).sum()
-    
-    if result>=3:
-        result=scoreTable[y]+result-3
+    for x in range(1,6):
+        sameEyes=(diceArray==x).sum()
+        if sameEyes >=3:
+            result+=scoreTable[x-1]
+            result+=scoreOneFive[x-1]*(sameEyes-3)
+            diceArray=diceArray[diceArray!=x]
+    result+=(diceArray==1).sum()*100
+    result+=(diceArray==5).sum()*50
     return result
-
- 
-
-    #Compute 3 or more eyes
-    #def compute_eyes(ey):
-    #    return (de score van 3) plus de score van de resterende
-    #    (zo die er al is). Kunnen 100 zijn voor een (elke?) 1
-    #    Kunnen 50 zijn voor een (elke?) 5
-    #return
-    # bruikbare methodes
-    # .sum() telt arrayelementen bij elkaar op
-    # equals operator op array (==) true als erin false als niet
-    # voor elk element in de array. Returns arrau met T en F
-    # True heeft als waarde 1, dus op die manier kan je
-    # elementen met een bepaalde waarde tellen.
-    pass
-
-a=[5,1,3,4,1]
-b=[2,1,1,2,2]
+    
+a=[1,1,5,5,6]
+b=[4,4,4,3,3]
 c=[2,4,4,5,4]
 
-print('Haaai', score(b))
-
-
-#probe machen met Lambdafunctie: het idee is dat elk getal dezelfde
-#behandeling krijgt met iets andere puntentelling
-#telling(5)
-#~Zie Anki voor verder (Lambda Greed is Good)
-#Of zoiets als
-#we fietsen door alle cijfers heen
-#als een cijfer 3 of meer keer voorkomt
-#roepen we een hendy functie aan die te telling teuggeeft
-#zo niet dan tellen we het aantal punten 'gewoon' op
-#en retourneren het resultaat
-#
-#hoe weet je dan of het er méér dan drie zijn?
-#je kan ze tellen en dan kijken of er drie af te trekken zijn 
+print('Score', score(a), score (b), score(c))
