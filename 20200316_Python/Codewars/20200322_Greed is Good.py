@@ -1,4 +1,4 @@
- #Greed is Good | Codewars
+#Greed is Good | Codewars
 #invoer is een array van 6 cijfers
 #daar moet een score uitkomen volgens deze tabel:
 #Three 1's => 1000 points
@@ -15,8 +15,8 @@
 #5 1 3 4 1   50 + 2 * 100 = 250
 #1 1 1 3 1   1000 + 100 = 1100
 #2 4 4 5 4   400 + 50 = 450
-#DJO B.20200322|11:04 - E.20200420|10:32 D.28d23h28m
-# via https://www.timeanddate.com/date/timeduration.html
+#DJO B.20200322|11:04 - E.20200426|12:21 D.35d01h17m
+#via https://www.timeanddate.com/date/timeduration.html
 #---
 #Takeaway:
 # x collections uiteindelijk niet gebruikt:
@@ -46,6 +46,27 @@
 # . mogelijke telling van 1 of 2 enen of vijven.
 # . opgelost door in de iteratie de losse 1en en 5en te tellen
 # . Zie r. 62.
+# ---
+# . De iteratiepoging faalde alsnog omdat de upperboundary
+# . van de rangefunction (1,6) niet meetelt (het is een uitpunt)
+# . De range functie moet dus lopen van (1,7) - zeuven)
+# . Ik miste daardoor de triple 6 in de telling :)
+# ---
+# . Een oplossing waar ik op zat te broeden maar wat niet lukte
+# . is het gebruik van (naar ik nu weet) de floor - of integer
+# . division. Hoe vaak past een getal in een ander getal.
+# . De tegenhanger van modulo (notatie in Python // vs %)
+# . Je kan dan de oplossing zo schijven (damn had ik m maar)
+# .
+# . def score(dice):
+# .    return dice.count(1)//3 * 1000 + dice.count(1)%3 * 100 \
+# .           + dice.count(2)//3 * 200 \
+# .           + dice.count(3)//3 * 300 \
+# .           + dice.count(4)//3 * 400 \
+# .           + dice.count(5)//3 * 500 + dice.count(5)%3 * 50 \
+# .           + dice.count(6)//3 * 600 \
+# . Chapeau
+# .---
 
 import numpy as np
 
@@ -55,7 +76,7 @@ def score(dice):
     scoreOneFive=np.array([100,0,0,0,50,0])
     diceArray=np.array(dice)
     
-    for x in range(1,6):
+    for x in range(1,7):
         sameEyes=(diceArray==x).sum()
         if sameEyes >=3:
             result+=scoreTable[x-1]
@@ -65,7 +86,7 @@ def score(dice):
     result+=(diceArray==5).sum()*50
     return result
     
-a=[1,1,5,5,6]
+a=[6,6,6,4,4]
 b=[4,4,4,3,3]
 c=[2,4,4,5,4]
 
