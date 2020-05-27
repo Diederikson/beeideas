@@ -22,7 +22,7 @@ function NameList() {
             skill:'COBOL'
         }
     ]
-    const personList = persons.map(person => <Person key={person.id} person={person}/>)
+    const personList = persons.map(person => <Person key={id} person={person}/>)
     return (
         <div>
             {personList}
