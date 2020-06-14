@@ -47,7 +47,7 @@ def fibonacci(n):
     def calc(n):
         if n in mem:
             return mem[n]        
-        mem[n]=//Jahaaa hier ziet m de crux 
+        #mem[n]=//Jahaaa hier ziet m de crux 
         print(mem)
         return calc(n - 1) + calc(n - 2)
     return calc(n)
