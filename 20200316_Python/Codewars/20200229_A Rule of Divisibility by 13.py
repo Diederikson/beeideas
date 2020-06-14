@@ -15,7 +15,7 @@ def get_digit(num):
 a=[]
 b=[1,10,9,12,3,4]
 som,compare=0,0
-#getal =int(input('kunt u een getal in mijn gehuegen geven ? '))
+getal =int(input('kunt u een getal in mijn gehuegen geven ? '))
 som=get_digit(getal)
 while (som != compare):
         compare = som
