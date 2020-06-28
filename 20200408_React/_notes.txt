@@ -48,7 +48,11 @@ https://youtu.be/CVpUuw9XSjY?t=943
 https://youtu.be/CVpUuw9XSjY?t=1904
 
 kijk even de bookmarkstoolbarfolderr na
-
+---
+20200618
+TIL Workspace in VSC is een verzameling mappen en settings in 1 klap openen
+TIL Als je een workspace hebt kan je voor elke map aan versiebeheer doen
+TIL ook voor de TODOTODAY. Je krijgt dan aparte entries in git
 
 
 
