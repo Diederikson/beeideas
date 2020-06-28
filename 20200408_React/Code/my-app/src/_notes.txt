@@ -1,0 +1,4 @@
+20200628 10:24
+Status
+- De tictactoe tutorial gebleven bij What is react (https://reactjs.org/tutorial/tutorial.html)
+- in dev.to account een bookmark aangemaakt van een artikel over declaraties en imperatief programmeren

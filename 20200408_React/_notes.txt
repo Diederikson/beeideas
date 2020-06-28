@@ -53,6 +53,16 @@ kijk even de bookmarkstoolbarfolderr na
 TIL Workspace in VSC is een verzameling mappen en settings in 1 klap openen
 TIL Als je een workspace hebt kan je voor elke map aan versiebeheer doen
 TIL ook voor de TODOTODAY. Je krijgt dan aparte entries in git
+---
+09:42 28-6-2020
+Vond deze map terug. Het grote probleem is de discipline vol te houden. 
+Het is in mijn hoofd constant een chaos en een gedraai. ik begin 1000 keer opnieuw en 
+maak daardoor geen progressie. Nu weer. Ik Wil uitzoeken hoe iets moet in React en de Administrative
+last die ik er voor opzet is 100 keer groter.
+Dus vereenvoudigen. Dag na dag na dag.
+
+Heb ik gedaan. Door ff mn nieuwe projectje (TicTacToe) onder te brengen in /documents/git/bee/react/code
+De map ttt heb ik nog niet, ik vermoed dat dat het eerste commando word
 
 
 
