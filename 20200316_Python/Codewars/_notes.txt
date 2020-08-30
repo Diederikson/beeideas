@@ -38,4 +38,8 @@ def rot13(message):
 
 rot_lower rot_upper en code_it zijn drie functies binnen de opdracht
 
+16:36 30-8-2020
+Wel aangepast, nooit opgeschreven: door een py bestand te open met idle.bat (c:\python\lib\idlib) 
+kom je in de editor terecht en niet in de shell. Handy: kun je meteen doorprogrammeren!!
+ 
 
