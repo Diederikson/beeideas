@@ -66,6 +66,11 @@
 # .           + dice.count(5)//3 * 500 + dice.count(5)%3 * 50 \
 # .           + dice.count(6)//3 * 600 \
 # . Chapeau
+# . Nabrander. Waarom de fuck dit soort dingen altijd weer breken is
+# . Me een raadsel. Er wordt gezegd op https://github.com/numpy/numpy/issues/15424
+# . Om numpy op een andere manier toe te voegen aan de bibliotheek
+# . Het werkt maar waarom is een groot raadsel en de vraag is of dit
+# . ook voor andere libries gaat gelden. Wat.een.ge.kut
 # .---
 
 import numpy as np

@@ -8,7 +8,7 @@ YO! Triple Quotes is here to stay!
 # slag behaald worden. Een waarde moet dus in eerste instantie
 # opgezocht worden en dan eventueel berekend (en opgeslagen)
 #---------------------------------------------------------------
-# DJO B.20200507|08:39 - T[
+# DJO B.20200507|08:39 - E.20200831|16:47 D.116d8h8
 # via https://www.timeanddate.com/date/timeduration.html
 #---
 #Takeaway:
@@ -40,26 +40,56 @@ YO! Triple Quotes is here to stay!
 # (getal, fibno) als key value
 # Gekuh henkie. Dict gemaakt eerste twee waarden toegevoegd,
 # maar nu is de vraag hoe vul je die met een tussen resultaat?
-#
+# ---
+# 20200831 Je kan zeggen dat we hier wat lang over hebben gedaan,
+# Maar dan nu toch een oplossing door de (recursieve) berekening van een
+# uikomst eigenlijk nogmaals te doen (Als die uitkomst nog niet bestaat)
+# Anders moet je de waarde uit het array teruggeven aan de hoofd
+# fibberekening. En zorg dat je de beginwaarden niet allebij op 1 zet
+# Dan klopt r geen fuck meer van. But not to worry
+# Zoals te doen gebruikelijk werkt mijn oplossing niet in
+# Codewars (timeout) en heb ik geen zin meer.
+# NEXXXT
+# ---
+# Rustaaag. Ik heb welliswaar de handoek in de ring gegooid maar ik ga nog wel een
+# Post mortem doen hiervan. Namelijk er is sprake van een decorator (de @ syntax)
+# Wat is dat. En wat is de fout in mijn oplossing, want in de oplossingen
+# van anderen zie ik weldegelijk (stukjes van) mijn code terug
+# ennyway mijn oplossing blijft staan maar de correcte oplossing staat
+# nu als derde (en is een beetje aangepast ook
+# ---
+# kom ik hier een heule tijd later (gewoon omdat ik weer es wat wil pielen)
+# Zie ik de derder oplossing staan en dat lijkt nergens naar. Abandonned code
+# of zo. Maar goed Codewars is er dus ook nog.
 """
-def fibonacci(n):
-    mem={0:0,1:1}
+memo = {}
+
+def fibonacci_1(n):
+    if n in [0, 1]:
+        return n
+    if n not in memo:
+        memo[n] = fibonacci_1(n - 1) + fibonacci_1(n - 2)
+    return memo[n]
+
+#memoization is een sub-functie of inner functie of hoe het heeft
+def fibonacci_2(n):
+    mem={0:0,1:1} 
     def calc(n):
-        if n in mem:
-            return mem[n]        
-        #mem[n]=//Jahaaa hier ziet m de crux 
+        if n not in mem:
+            mem[n]=calc(n-1)+calc(n-2)
+        return mem[n]
         print(mem)
-        return calc(n - 1) + calc(n - 2)
     return calc(n)
     
 
-def fibonacci2(n):
+def fibonacci_3(n):
     if n in [0, 1]:
         return n
-    print(n," ", n-1," ",n-2," (",2*n-3,") ",end="|",sep='')
-    return fibonacci2(n - 1) + fibonacci2(n - 2)
+    # print(n," ", n-1," ",n-2," (",2*n-3,") ",end="|",sep='')
+    return fibonacci_3(n - 1) + fibonacci_3(n - 2)
 
 while True:
     fib=int(input('geef een getal'))
-    print(fibonacci(fib),'fib')
-    print(fibonacci2(fib),'chck')
+    print(fibonacci_1(fib),'fib_1')
+    print(fibonacci_2(fib),'fib_2')
+    print(fibonacci_3(fib),'fib_3')

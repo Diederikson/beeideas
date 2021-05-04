@@ -42,4 +42,7 @@ rot_lower rot_upper en code_it zijn drie functies binnen de opdracht
 Wel aangepast, nooit opgeschreven: door een py bestand te open met idle.bat (c:\python\lib\idlib) 
 kom je in de editor terecht en niet in de shell. Handy: kun je meteen doorprogrammeren!!
  
-
+19:51 7-9-2020
+Theming van IDLE aangepast zie 
+- https://observer.com/2015/02/meet-the-man-behind-solarized-the-most-important-color-scheme-in-computer-history/
+- https://github.com/mattcan/solarized-idle
